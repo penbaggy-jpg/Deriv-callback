@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Returning to DerivPulse</title></head>
+<body style="font-family:sans-serif;background:#070b14;color:#e6edf7;text-align:center;padding:40px">
+<p id="m">Returning to DerivPulse…</p>
+<p><a id="b" style="color:#2de2b0" href="#">Open DerivPulse</a></p>
+<script>
+var p = new URLSearchParams(location.search), o = new URLSearchParams();
+["code","state","error","error_description"].forEach(function(k){ if (p.get(k)) o.set(k, p.get(k)); });
+var t = "derivpulse://oauth?" + o.toString();
+document.getElementById("b").href = t;
+location.replace(t);
+</script>
+</body></html>
